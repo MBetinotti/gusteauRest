@@ -1,0 +1,118 @@
+// En components definimos estilos para elementos htmls concretos (a, p, h1,h3) pero teniendo solo en cuenta su nameClass
+
+.main-name {
+    font-family:  $font-josefineSans;
+    margin: 10px;
+    font-size: 50px;
+    color: $color-terciary;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sub-name {
+    font-family: $font-josefineSans;
+    font-size: 18px;
+    color:$color-terciary;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+
+.sub-heading {
+    font-family: $font-dancingScript;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-terciary;
+    margin-bottom: 60px;
+}
+
+.main-btn {
+    @include button ($color-terciary, $color-terciary,$color-primary,$color-dark );
+}
+
+.main-heading {
+    position: relative;
+    top: -80px;
+    font-family: $font-dancingScript;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-primary;
+    margin-bottom: 40px;
+}
+
+
+.second-btn {
+   @include button($color-primary, $color-primary, $color-secondary, $color-white)
+}
+
+
+
+.card {
+    width: 40%;
+    height: 30vw;
+    @include flex(row, center);
+    align-items: center;
+    margin:40px;
+    background-color: rgba($color-black, .1);
+    transition: all .4s;
+
+    &-overlay {
+        @include flex(column, center);
+        color: $color-primary;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+
+        &-heading {
+            font-family: $font-nunito;
+            font-size: 50px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        &-paragraph {
+            font-family: $font-josefineSans;
+            font-size: 30px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        &-btn {
+            width: 150px;
+            height: 40px;
+            color: $color-primary;
+            background-color: transparent;
+            font-family: $font-josefineSans;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid $color-primary;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            &:hover {
+                background-color: $color-primary;
+                color: $color-white;
+                border-color: $color-primary ;
+            }
+        }
+    }
+
+    &-img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}

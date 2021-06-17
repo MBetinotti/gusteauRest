@@ -1,0 +1,223 @@
+// En layout vamos a setear los estilos correspondientes al layout
+// Se trabaja con los elementos div y section teniendo en cuenta su className y algunos elementos con estilos no reutilizables
+
+.navbar {
+    position: sticky;
+    top:5px;
+    z-index: 1;
+    width: 100%;
+    background-color: $color-white;
+    height: 10vh;
+    
+    
+    &-navigation {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        &-right {
+           display: flex;
+           width: 100%;
+        }
+
+        .nav-list {
+            @include flex(row, space-around);
+            width: 100%;
+            align-items: center;
+
+            &-item {
+                @include font-base();
+                list-style: none;
+            }
+            
+            &-link {
+                font-family: $font-dancingScript;
+                font-size: 25px;
+                color: $color-secondary;
+                text-decoration: none;
+                display: block;
+                margin: 20px;
+                text-align: center;
+                font-weight: 300;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(rgba($color-black, .8), rgba($color-black, .3)), url(../images/nav-img-3.jpeg) center no-repeat;
+    background-size: cover;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        border: 1px solid $color-terciary;
+        outline: none;
+        padding: 30px;
+        transition: all .4s;
+
+        &:hover {
+            padding: 40px;
+        }
+    }
+
+    &-banner {
+        text-align: center;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.about-us {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+    &-right {
+        width: 40%;
+        position: relative;
+        left: 200px;
+        img {
+            width: 100%;
+            opacity: .7;
+        }
+    }
+
+    &-left {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 100px;
+        box-sizing: border-box;
+
+       
+
+        .description {
+
+            font-family: $font-josefineSans;
+            font-size: 25px;
+            font-style: italic;
+            color: $color-secondary;
+            text-align: justify;
+            margin-bottom: 40px;
+            &::first-letter {
+                padding-left: 50px;
+            }
+        }
+    }
+}
+
+ .stars {
+     @include flex (row, space-between);
+     align-items: center;
+    margin:30px 0;
+        }
+
+ .star {
+            font-size: 15px;
+            color: $color-primary;
+            margin-left: 10px;
+        }
+    .line{
+        width: 40%;
+        height: 2px;
+        background-color: $color-primary;
+    }
+
+.gallery {
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        @include flex(row, space-around);
+        align-items: center;
+    }
+}
+
+.footer {
+    padding: 30px 0;
+    @include flex(row, space-around);
+    align-items:center;
+    background-color: $color-black;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        border: 1px solid $color-terciary;
+        outline: none;
+        padding: 20px;
+
+        &-title {
+            font-family:  $font-josefineSans;
+            margin: 10px;
+            font-size: 30px;
+            color: $color-terciary;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        &-sub-title {
+            font-family: $font-josefineSans;
+            font-size: 15px;
+            color:$color-terciary;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &-rightside{
+        @include flex(column, center);
+        align-items: center;
+    }
+
+    .social-media {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        &-item {
+            list-style: none;
+        }
+
+        &-link {
+            text-decoration: none;
+            font-size: 40px;
+            color: $color-terciary;
+            transition: color .3s;
+            
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &-copyright-paragraph {
+        font-family: $font-dancingScript;
+        font-size: 18px;
+        color: $color-terciary;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+    }
+}

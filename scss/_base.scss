@@ -1,0 +1,55 @@
+// Hoja de estilos que reune variables y estilos generales(@mixin) aplicables a diversos elementos/bloques
+
+$color-dark: #161616;
+$color-black: #000;
+$color-primary: #C84B31 ;
+$color-secondary: #346751;
+$color-terciary: rgb(206, 188, 89);
+$color-white: #ECDBBA;
+
+$font-dancingScript: 'Dancing Script', cursive;
+$font-josefineSans: 'Josefin Sans', san-serif;
+$font-nunito: 'Nunito', san-serif;
+
+@mixin font-base {
+    text-align: center;
+    text-decoration: none;
+}
+
+@mixin flex ($direction, $justify){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin button ($border-color, $btn-color, $hov-bg-color, $hov-color) {
+
+    width: 170px;
+    height: 45px;
+    font-family: $font-josefineSans;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $btn-color;
+    background-color: transparent;
+    border: 1px solid $border-color;
+    outline: none;
+    cursor: pointer;
+    transition: all .4s;
+
+    &:hover {
+        background-color: $hov-bg-color;
+        color: $hov-color;
+        border-color: $hov-bg-color ;
+    }
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-white;
+}
